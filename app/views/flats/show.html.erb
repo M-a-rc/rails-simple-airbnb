@@ -1,11 +1,47 @@
-<h1><%= @flat.name %></h1>
+<div class="banner showbanner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/500×<%=290 + @flat.id%>);">
 
-<ul>
-<li>Address:<%= @flat.address %></li>
-<li>description:<%= @flat.description %></li>
-<li>number_of_guests:<%= @flat.number_of_guests %></li>
-<li>price_per_night:<%= @flat.price_per_night %></li>
-</ul>
-
-<%= link_to 'Back', flats_path, class: "btn btn-primary footbtn" %>
-<%= link_to 'Edit', edit_flat_path(@flat), class: "btn btn-primary footbtn" %>
+</div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-8">
+        <div class="show-card">
+          <div class="card-flat-title">
+            <h2><%= @flat.name %></h2>
+            <p><%= @flat.address %></p>
+          </div>
+          <div class="card-flat-description">
+            <p><%= @flat.description %></p>
+          </div>
+          <div class="show-btm-links">
+            <%= link_to 'Back', flats_path, class: "btn btn-primary footbtn" %>
+            <%= link_to 'Edit', edit_flat_path(@flat), class: "btn btn-primary footbtn" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="show-right-div">
+          <div class="book">
+          <h2>Book this flat</h2>
+          <form action="">
+            <input type="date">
+            <input type="date">
+          </form>
+          <div class="btn btn-primary">Book</div>
+          </div>
+          <div class="details">
+            <h3>Details</h3>
+            <p class="nog"><i class="fa-solid fa-person"></i><%= @flat.number_of_guests %></p>
+            <p class = "ppn"><i class="fa-solid fa-dollar-sign"></i><%= @flat.price_per_night %></p>
+          </div>
+          <div class="share">
+            <h3>Share</h3>
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-medium"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
