@@ -28,11 +28,10 @@ class FlatsController < ApplicationController
   def create
     @flat = Flat.new(flat_params)
     @flat.save
-
-    if @flat.save
-      redirect_to flat_path(@flat)
-    else
+    if @flat.new_record?()
       render :new
+    else
+      redirect_to flat_path(@flat)
     end
   end
 
