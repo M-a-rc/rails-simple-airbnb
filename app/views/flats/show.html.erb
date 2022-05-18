@@ -1,0 +1,11 @@
+<h1><%= @flat.name %></h1>
+
+<ul>
+<li>Address:<%= @flat.address %></li>
+<li>description:<%= @flat.description %></li>
+<li>number_of_guests:<%= @flat.number_of_guests %></li>
+<li>price_per_night:<%= @flat.price_per_night %></li>
+</ul>
+
+<%= link_to 'Back', flats_path, class: "btn btn-primary footbtn" %>
+<%= link_to 'Edit', edit_flat_path(@flat), class: "btn btn-primary footbtn" %>
